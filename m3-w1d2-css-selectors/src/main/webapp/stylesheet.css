@@ -49,6 +49,13 @@ h2 { color: #2f9CBC;
      font-weight:300;
      font-family: 'Helvetica', sans-serif;
 }
+menu {background-color: #ddd;
+      display: block;
+      width: 80%;
+       }
+.header { width: 300px;
+        background-color: black;
+        }
 .talent { width: 25%;
  float: left;
  display: inline-block;
@@ -71,6 +78,7 @@ h3 { font-size: 18px;
      margin-bottom: 0;
      line-height: 28px;
      font-family: 'Helvetica', sans-serif;
+     display: inline;
 }
 h2, h3 { margin-top: 5px }
 a { color: #2a82a2;
