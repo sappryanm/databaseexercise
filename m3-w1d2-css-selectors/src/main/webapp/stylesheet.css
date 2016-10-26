@@ -76,7 +76,7 @@ menu {background-color: #f2f2f2;
      font-weight:800;
      font-family: 'Helvetica', sans-serif;
 	 }
-h3 { font-size: 18px;
+h3 { font-size: 22px;
     color: #009900;
      font-weight: bold;
      margin-bottom: 0;
@@ -86,7 +86,7 @@ h3 { font-size: 18px;
 }
 h2, h3 { margin-top: 5px }
 a { color: #d6f5d6;
-    display: inline-block;
+
     text-decoration: none;
     padding:2px 4px;
     border-radius:2px;
@@ -110,7 +110,7 @@ a:hover {
            padding: 10px 0 15px;
 }
 .section:last-child { border: none }
-.section-text { width: 80%;
+.section-text { width: 100%;
                 font-size: 18px;
                 line-height: 24px;
                 margin: 10px 0 10px;
@@ -165,7 +165,7 @@ clear: both;
 	}
 	.footer_text {
 	color: white;
-	float:right;
+
 	padding: 0vh 2vw 3vh 0vw;
 	}
 /*
@@ -176,11 +176,14 @@ clear: both;
 }
 .row:after { clear: both }
 .col { float: left;
-        width: 300px;
+        display:inline;
+        width:350px;
         background: #d6f5d6;
-        display: inline-block;
-         margin: 20px;}}
-.col-right { float: right }
+        padding: 10px;
+
+         margin: 10px;}
+.col-right { float: right
+            background: #d6f5d6;}
 
 .skill_list-u{width:80.0%;}
 
