@@ -18,19 +18,23 @@
 
 body { margin: 0;
        padding: 0;
-       background-color: #ddd; font-size: 1em;
+       background-color: white; font-size: 1em;
        font-family: "Helvetica", sans-serif;
        -webkit-font-smoothing: subpixel-antialiased;
 }
 * { box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
-
+.header { width: 100%;
+        background-color: black;
+        height:100px;
+        font-color: white;
+        }
 /*
  Primary Rules
 */
-h1 { font-weight: 300;
-      font-style:italic;
+h1 { font-weight: 300px;
+     font-style:italic;
      margin: 1vh 0vw 0vh 2vw;
      font-size: 3em;
      color:#2f9CBC;
@@ -41,21 +45,20 @@ h1 { font-weight: 300;
 .hline { width:40%; 
 	height: 5px; 
 	background: #2f9CBC; }
-h2 { color: #2f9CBC;
-     width: 20%;
+h2 { color: white;
+
      font-size: 1.5em;
      padding-left: 20px;
 	 text-align: left;
      font-weight:300;
      font-family: 'Helvetica', sans-serif;
 }
-menu {background-color: #ddd;
+menu {background-color: #f2f2f2;
       display: block;
-      width: 80%;
+      width: 80%
+
        }
-.header { width: 300px;
-        background-color: black;
-        }
+
 .talent { width: 25%;
  float: left;
  display: inline-block;
@@ -74,6 +77,7 @@ menu {background-color: #ddd;
      font-family: 'Helvetica', sans-serif;
 	 }
 h3 { font-size: 18px;
+    color: #009900;
      font-weight: bold;
      margin-bottom: 0;
      line-height: 28px;
@@ -81,7 +85,7 @@ h3 { font-size: 18px;
      display: inline;
 }
 h2, h3 { margin-top: 5px }
-a { color: #2a82a2;
+a { color: #d6f5d6;
     display: inline-block;
     text-decoration: none;
     padding:2px 4px;
@@ -90,6 +94,7 @@ a { color: #2a82a2;
 }
 p {
 	font-family: "Minion Pro";
+	color: black;
 	}
 a:hover {
   background-color:#gray;
@@ -153,7 +158,7 @@ ul.skills li:last-child{
 
 .footer {
 clear: both;
-	background-color: #2f9CBC;
+	background-color: #bfbfbf;
 	height: 6vh;
 	width: 100%;
 	margin: 0;
@@ -170,7 +175,11 @@ clear: both;
                           display: table;
 }
 .row:after { clear: both }
-.col { float: left }
+.col { float: left;
+        width: 300px;
+        background: #d6f5d6;
+        display: inline-block;
+         margin: 20px;}}
 .col-right { float: right }
 
 .skill_list-u{width:80.0%;}
