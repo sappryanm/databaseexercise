@@ -1,0 +1,220 @@
+/*
+ Page Rules
+*/
+
+.page { 
+        margin-top: 1vh;
+		margin-right: auto;
+		margin-bottom: 0vh;
+		margin-left: auto;
+        background: white;
+        padding: 3vh 5vw 0vh 5vw;
+}
+
+
+@page { size: A4;
+        margin: 0;
+}
+
+body { margin: 0;
+       padding: 0;
+       background-color: #ddd; font-size: 1em;
+       font-family: "Helvetica", sans-serif;
+       -webkit-font-smoothing: subpixel-antialiased;
+}
+* { box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/*
+ Primary Rules
+*/
+h1 { font-weight: 300;
+      font-style:italic;
+     margin: 1vh 0vw 0vh 2vw;
+     font-size: 3em;
+     color:#2f9CBC;
+     padding: 0 10px 10px;
+     border-radius:2px;
+     font-family: 'Helvetica', sans-serif;
+}
+.hline { width:40%; 
+	height: 5px; 
+	background: #2f9CBC; }
+h2 { color: #2f9CBC;
+     width: 20%;
+     font-size: 1.5em;
+     padding-left: 20px;
+	 text-align: left;
+     font-weight:300;
+     font-family: 'Helvetica', sans-serif;
+}
+.talent { width: 25%;
+ float: left;
+ display: inline-block;
+ text-align: center;
+
+ }
+.talent h2 { margin-bottom: 6px; }
+
+.talent_skils {
+	color: #2f9CBC;
+	width: 100%;
+     font-size: 1em;
+	 text-align: center;
+	 align-content: center;
+     font-weight:800;
+     font-family: 'Helvetica', sans-serif;
+	 }
+h3 { font-size: 18px;
+     font-weight: bold;
+     margin-bottom: 0;
+     line-height: 28px;
+     font-family: 'Helvetica', sans-serif;
+}
+h2, h3 { margin-top: 5px }
+a { color: #2a82a2;
+    display: inline-block;
+    text-decoration: none;
+    padding:2px 4px;
+    border-radius:2px;
+    margin-right:-2px;
+}
+p {
+	font-family: "Minion Pro";
+	}
+a:hover {
+  background-color:#gray;
+  color:#2f9CBC;
+}
+
+.key:first-child { margin-left: 0 }
+.key { margin: 0 10px;
+       position: relative;
+}
+.key:first-child::before { content: '' }
+.section { border-bottom: 1px solid #ddd;
+           padding: 10px 0 15px;
+}
+.section:last-child { border: none }
+.section-text { width: 80%;
+                font-size: 18px;
+                line-height: 24px;
+                margin: 10px 0 10px;
+                padding: 0 10px;
+}
+.subsection { margin: 10px 0 5px }
+.desc { font-size: 1em; font-family: "Minion Pro", sans-serif; color:#444;}
+.contact-info { font-size: 1em;
+                text-align: right;
+				margin-right: 4vw;
+				font-stretch: expanded;
+				color: #231f20;
+}
+.emph { font-style: italic }
+.light { color: #aaa;letter-spacing:1px;
+         font-size: 14px;
+         line-height:28px;
+         font-family: "source-sans-pro", sans-serif;
+         text-transform:uppercase;
+}
+ul{
+  padding-left:15px;
+}
+
+ul.skills{
+  float:left;
+  width:30%;
+  padding-left:0px;
+  margin: 0px 20px 0px 0px;
+}
+
+ul.skills li{
+  list-style: none;
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+ul.skills li:last-child{
+  margin:0;
+}
+.skills-list {  }
+.skills-list ul { margin: 0; }
+.skills-list li { margin: 3px 0; padding: 3px 0; }
+.skills-list li span { font-size: 152%; display: block; margin-bottom: -2px; padding: 0 }
+
+.footer {
+clear: both;
+	background-color: #2f9CBC;
+	height: 6vh;
+	width: 100%;
+	margin: 0;
+	}
+	.footer_text {
+	color: white;
+	float:right;
+	padding: 0vh 2vw 3vh 0vw;
+	}
+/*
+ Float Rules
+*/
+.row:before, .row:after { content: "";
+                          display: table;
+}
+.row:after { clear: both }
+.col { float: left }
+.col-right { float: right }
+
+.skill_list-u{width:80.0%;}
+
+
+
+@media print {
+    .page { margin: 3vh;
+            border: initial;
+            border-radius: initial;
+            width: initial;
+            min-height: initial;
+            box-shadow: initial;
+            background: initial;
+            page-break-after: always;
+			background-color: #fff;
+    }
+    .page-break{
+      page-break-before: always;
+      padding-top:30px;
+    }
+
+    body { font-size: 12pt;}
+    h1{
+	color:2f9CBC;
+      font-size: 23pt;
+    }
+
+    h2{
+      font-size:10pt;
+      width: 3cm;
+      padding-left: 10px;
+    }
+
+    h3 { font-size: 10pt; line-height:11pt}
+
+    .section-text { font-size: 9pt; line-height: 14pt; }
+
+    .light { font-size: 7.5pt; line-height:12pt; color:#ddd; }
+    
+    .page { width: 21cm }
+    ul {margin:5px 0 0}
+    .section { padding: 5px 0 8px }
+    .section-text { width: 15cm; margin: 5px 0 5px;}
+    .subsection { margin: 5px 0 0 }
+    .desc { font-size: 9pt }
+    
+    .contact-info { font-size: 9px;
+	}
+	.footer {font-size: 9px; line-height: 14pt; display: none;}
+    
+    ul.skills{margin: 0 10px 0 0;}
+    ul.skills li{ font-size: 9pt; margin-bottom:0}
+
+}
