@@ -27,30 +27,28 @@
 	<c:set var='intID' value="1"/>
 	<c:set var="nexImageID" value="${imageID + int1}" />		
 	<c:forEach var="recipe" items="${recipes}">
-	<c:choose>
-		<c:when test="${recipe.averageRating < 2}">
-			<img src="img/1-star.png" />
-		</c:when>
-		<c:when test="${recipe.averageRating < 3}">
-			<img src="img/2-star.png" />
-		</c:when>
-		<c:when test="${recipe.averageRating < 4}">
-			<img src="img/3-star.png" />
-		</c:when>
-		<c:when test="${recipe.averageRating < 5}">
-			<img src="img/4-star.png" />
-		</c:when>
-		<c:otherwise>
-			<img src="img/5-star.png" />
-		</c:otherwise>
-	</c:choose>	
-		
 		<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
 		<li>${recipe.name}</li>
-		<div>
+		<c:choose>
+			<c:when test="${recipe.averageRating < 2}">
+				<img src="img/1-star.png" />
+			</c:when>
+			<c:when test="${recipe.averageRating < 3}">
+				<img src="img/2-star.png" />
+			</c:when>
+			<c:when test="${recipe.averageRating < 4}">
+				<img src="img/3-star.png" />
+			</c:when>
+			<c:when test="${recipe.averageRating < 5}">
+				<img src="img/4-star.png" />
+			</c:when>
+			<c:otherwise>
+				<img src="img/5-star.png" />
+			</c:otherwise>
+		</c:choose>	
 		<img src ="<c:url value="${starCount}"/> "/>
-
-		</div>		
+		<li>${recipe.ingredients.value}</li>
+		
 	</c:forEach>
     </ul>
 
