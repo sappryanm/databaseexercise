@@ -14,14 +14,46 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Board Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
         </ul>
         
     </nav>
     <section id="main-content">
+	<h1>Recipes</h1>
+	<ul>
+	<c:set var='imageID' value="0"/>
+	<c:set var='intID' value="1"/>
+	<c:set var="nexImageID" value="${imageID + int1}" />		
+	<c:forEach var="recipe" items="${recipes}">
+	<c:choose>
+		<c:when test="${recipe.averageRating < 2}">
+			<img src="img/1-star.png" />
+		</c:when>
+		<c:when test="${recipe.averageRating < 3}">
+			<img src="img/2-star.png" />
+		</c:when>
+		<c:when test="${recipe.averageRating < 4}">
+			<img src="img/3-star.png" />
+		</c:when>
+		<c:when test="${recipe.averageRating < 5}">
+			<img src="img/4-star.png" />
+		</c:when>
+		<c:otherwise>
+			<img src="img/5-star.png" />
+		</c:otherwise>
+	</c:choose>	
+		
+		<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
+		<li>${recipe.name}</li>
+		<div>
+		<img src ="<c:url value="${starCount}"/> "/>
 
-       
+		</div>		
+	</c:forEach>
+    </ul>
+
 
     </section>
 </body>
