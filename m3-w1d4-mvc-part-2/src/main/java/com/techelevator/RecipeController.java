@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller 
 public class RecipeController {
+
 	private List<Recipe> recipes;
 	
 	public RecipeController() {
 		recipes = getAllRecipes();
 	}
-	
+
 	@RequestMapping({"/", "/recipeList"})
 	public String displayRecipeList(HttpServletRequest request) {
 		request.setAttribute("recipes", recipes);
