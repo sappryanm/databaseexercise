@@ -20,39 +20,44 @@
         </ul>
         
     </nav>
-    <section id="main-content">
+<div class="section">
 	<h1>Recipes</h1>
-	<ul>
-	<c:set var='imageID' value="0"/>
-	<c:set var='intID' value="1"/>
-	<c:set var="nexImageID" value="${imageID + int1}" />		
+	<div class=container>		
 	<c:forEach var="recipe" items="${recipes}">
-		<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
-		<li>${recipe.name}</li>
-		<c:choose>
-			<c:when test="${recipe.averageRating < 2}">
-				<img src="img/1-star.png" />
-			</c:when>
-			<c:when test="${recipe.averageRating < 3}">
-				<img src="img/2-star.png" />
-			</c:when>
-			<c:when test="${recipe.averageRating < 4}">
-				<img src="img/3-star.png" />
-			</c:when>
-			<c:when test="${recipe.averageRating < 5}">
-				<img src="img/4-star.png" />
-			</c:when>
-			<c:otherwise>
-				<img src="img/5-star.png" />
-			</c:otherwise>
-		</c:choose>	
-		<img src ="<c:url value="${starCount}"/> "/>
-		<li>${recipe.ingredients.value}</li>
+		
+			<div class=column>
+			<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
+			<h3>${recipe.name}</h3>
+			<c:choose>
+				<c:when test="${recipe.averageRating < 2}">
+					<img class="stars" src="img/1-star.png" />
+				</c:when>
+				<c:when test="${recipe.averageRating < 3}">
+					<img class="stars" src="img/2-star.png" />
+				</c:when>
+				<c:when test="${recipe.averageRating < 4}">
+					<img class="stars" src="img/3-star.png" />
+				</c:when>
+				<c:when test="${recipe.averageRating < 5}">
+					<img class="stars" src="img/4-star.png" />
+				</c:when>
+				<c:otherwise>
+					<img class="stars" src="img/5-star.png" />
+				</c:otherwise>
+			</c:choose>	
+
+			<img src ="<c:url value="${starCount}"/> "/>
+
+			<p>${recipe.ingredients.size()} ingredients</p>
+			</div>
+		
 		
 	</c:forEach>
-    </ul>
+	
+	
+    </div>
+</div>
 
 
-    </section>
 </body>
 </html>
