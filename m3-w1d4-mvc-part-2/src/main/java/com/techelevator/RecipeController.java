@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,15 +16,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller 
 public class RecipeController {
 
+	private List<Recipe> recipes;
+	
+	public RecipeController() {
+		recipes = getAllRecipes();
+	}
+
 	@RequestMapping({"/", "/recipeList"})
 	public String displayRecipeList(HttpServletRequest request) {
-		request.setAttribute("recipes", getAllRecipes());
+		request.setAttribute("recipes", recipes);
 		return "recipeList";
 	}
 	
 	@RequestMapping("/recipeTable")
 	public String displayRecipeTable(HttpServletRequest request) {
-		request.setAttribute("recipes", getAllRecipes());
+		request.setAttribute("recipes", recipes);
 		return "recipeTable";
 	}
 	
@@ -41,7 +48,7 @@ public class RecipeController {
 	}
 	
 	private Recipe getRecipeById(Long recipeId) {
-		for(Recipe r : getAllRecipes()) {
+		for(Recipe r : recipes) {
 			if(r.getRecipeId().equals(recipeId)) {
 				return r;
 			}

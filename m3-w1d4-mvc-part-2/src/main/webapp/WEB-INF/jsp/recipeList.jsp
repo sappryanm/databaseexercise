@@ -14,15 +14,50 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Board Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
         </ul>
         
     </nav>
-    <section id="main-content">
+<div class="section">
+	<h1>Recipes</h1>
+	<div class=container>		
+	<c:forEach var="recipe" items="${recipes}">
+		
+			<div class=column>
+			<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
+			<h3>${recipe.name}</h3>
+			<c:choose>
+				<c:when test="${recipe.averageRating < 2}">
+					<img class="stars" src="img/1-star.png" />
+				</c:when>
+				<c:when test="${recipe.averageRating < 3}">
+					<img class="stars" src="img/2-star.png" />
+				</c:when>
+				<c:when test="${recipe.averageRating < 4}">
+					<img class="stars" src="img/3-star.png" />
+				</c:when>
+				<c:when test="${recipe.averageRating < 5}">
+					<img class="stars" src="img/4-star.png" />
+				</c:when>
+				<c:otherwise>
+					<img class="stars" src="img/5-star.png" />
+				</c:otherwise>
+			</c:choose>	
 
-       
+			<img src ="<c:url value="${starCount}"/> "/>
 
-    </section>
+			<p>${recipe.ingredients.size()} ingredients</p>
+			</div>
+		
+		
+	</c:forEach>
+	
+	
+    </div>
+</div>
+
+
 </body>
 </html>
