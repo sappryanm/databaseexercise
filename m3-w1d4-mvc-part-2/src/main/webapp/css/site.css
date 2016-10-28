@@ -112,3 +112,36 @@ tr:nth-child(odd) {background-color: #f2f2f2}
 td.headers {
 	background-color: #ffffff;
 }
+.ordered {
+	list-style-type: disc;
+	text-align: left;
+}
+.numbered {
+	list-style-type: decimal;
+	text-align: left;
+}
+.line {
+	height: 1px;
+	width: 100%;
+	background-color: #888888;
+}
+.detailImage {
+	float: left;
+}
+.space {
+	height: 70px;
+	width: 100%;
+}
+h4.alignLeft {
+	text-align: left;
+}
+h2.alignLeft {
+	text-align: left;
+}
+
+p.alignLeft {
+	text-align: left;
+}
+p.alignLeftType {
+	text-align: left;
+}

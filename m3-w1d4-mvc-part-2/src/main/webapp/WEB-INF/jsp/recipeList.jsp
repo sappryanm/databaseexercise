@@ -8,7 +8,7 @@
 		
 			<div class=column>
 			<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
-			<h3><a href="reipeDetail?recipeId= ${recipe.name}"/></h3>
+			<h3><a href="recipeDetails?recipeId=${recipe.recipeId}" />${recipe.name}</a></h3>
 			<c:choose>
 				<c:when test="${recipe.averageRating < 2}">
 					<img class="stars" src="img/1-star.png" />
