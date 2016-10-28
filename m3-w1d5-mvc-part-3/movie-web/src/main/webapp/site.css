@@ -78,6 +78,10 @@ td {
 h2 {
     padding: 15px;
 }
+#runtimeMin {
+	font-size: 1em;
+	font-weight: none;
+}
 
 section p {
     font-size: 1.2em;

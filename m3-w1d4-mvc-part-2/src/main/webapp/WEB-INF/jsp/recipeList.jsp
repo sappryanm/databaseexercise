@@ -1,25 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="recipeHeader.jsp" %>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Recipe List View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Board Layout</a></li>
-            <li><a href="#">Tile Layout</a></li>
-            <li><a href="#">Tile Layout</a></li>
-        </ul>
-        
-    </nav>
 <div class="section">
 	<h1>Recipes</h1>
 	<div class=container>		
@@ -27,7 +8,7 @@
 		
 			<div class=column>
 			<img src="<c:url value="img/recipe${recipe.recipeId}.jpg"/> " />
-			<h3>${recipe.name}</h3>
+			<h3><a href="reipeDetail?recipeId= ${recipe.name}"/></h3>
 			<c:choose>
 				<c:when test="${recipe.averageRating < 2}">
 					<img class="stars" src="img/1-star.png" />
@@ -57,7 +38,4 @@
 	
     </div>
 </div>
-
-
-</body>
-</html>
+<%@include file="recipeFooter.jsp"%>

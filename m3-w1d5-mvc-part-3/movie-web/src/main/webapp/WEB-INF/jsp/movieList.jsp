@@ -1,29 +1,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="movieHeader.jsp" %>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Page Title</title>
-    <link rel="stylesheet" href="site.css" />
-</head>
-<body>
-    <header>
-        <h1>Movie Listing</h1>
-    </header>
-    <nav>
-        <ul>
-        		<c:url var="movieListHref" value="/movieList" />
-            <li><a href="${movieListHref}">Movie List</a></li>
-            <li><a href="${movieListHref}">Nav Link 2</a></li>
-            <li><a href="${movieListHref}">Nav Link 3</a></li>
-            <li><a href="${movieListHref}">Nav Link 4</a></li>
-        </ul>
-
-    </nav>
-    <section id="main-content">
-        <p>List of movies goes here. Use the request scoped variable <code>movies</code></p>
+        <h2>Local Movie Listing</h2>
+        <table>
+        	<tr>
+        		<th></th>
+        		<th>Movie</th>
+        		<th>Genre</th>
+        		<th>Runtime (min)</th>
+        	</tr>
+        	<c:forEach var="movies" items="${movies}">
+	        	<tr>
+	        		<td><a href="movieDetail?movieId=${movies.id}"/>View Times</td>
+	        		<td>${movies.name}</td>
+	        		<td>${movies.genre}</td>
+	        		<td>${movies.runningTime}</td>
+	        	</tr>
+	        </c:forEach>
+        
+        </table>
     </section>
 </body>
 </html>

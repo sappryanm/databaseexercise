@@ -14,9 +14,8 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Board Layout</a></li>
-            <li><a href="#">Tile Layout</a></li>
-            <li><a href="#">Tile Layout</a></li>
+            <li><a href="/recipeList">Tile View</a></li>
+            <li><a href="/recipeTable">Table View</a></li>
         </ul>
         
     </nav>

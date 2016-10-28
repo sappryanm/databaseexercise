@@ -1,34 +1,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="bankHeader.jsp" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Fly By Night Bank</title>
-  <link rel="stylesheet" href="site.css">
-</head>
-<body>
-  <header>
-    <img src="img/flybynightlogo.png" alt="Fly By Night Bank">
-    <p class="motto">At Fly By Night, we treat your money as if it's our own.</p>
-  </header>
-  <nav>
-	<ul>
-		<c:url var="homeHref" value="/" />
-		<li><a href="${homeHref}">Home</a></li>
-		<li><a href="#">Log In or Enroll</a></li>
-		<li><a href="#">Why Fly By Night</a></li>
-		<c:url var="accountList" value="/accountList" />
-		<li><a href="${accountList}">Bank Account List</a></li>
-	</ul>
-	</nav>
 	<section id="main-content">
 		
-		<p>Display details for account id ${param.accountId} here. Use the request scoped variable <code>account</code>.</p>
+		<c:set var="ID" value="${param.accountId}" />
+        <h2>Interest Free Checking</h2>
+        <p><b>Balance: </b>${account.balance}</p>
+        <p><b>Account : </b>${account.accountNumber}</p>
+        <p><b>Account Type: </b>${account.accountType}</p>
+        <p><b>Transaction History:</b></p>
+        <table>
+        	<tr>
+        		<th>Date</th>
+        		<th>Amount</th>
+        		<th>Description</th>
+        	</tr>
+        	<c:forEach var="accounts" items="${account.transactionHistory}">
+        		<tr>
+        			<td>${accounts.transactionDate}</td>
+        			<td>${accounts.amount}</td>
+        			<td>${accounts.description}</td>
+     			</tr>
+        	</c:forEach>
+        </table>
+        <a href="accountList">Back to List</a>
 
 	</section>
-	<footer>
-        Fly By Night Bank | Varying Locations | josh@flybynightbank.com
-    </footer>
-	
-</body>
-</html>
+<%@include file="bankFooter.jsp" %>
