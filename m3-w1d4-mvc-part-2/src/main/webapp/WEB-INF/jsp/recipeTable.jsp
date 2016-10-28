@@ -1,25 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="recipeHeader.jsp" %>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Recipe Table View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-        </ul>
-        
-    </nav>
-<div class="section">
 	<h1>Recipes</h1>
 		<table>
 			<tr>
@@ -78,16 +59,6 @@
 
 				</c:forEach>
 			</tr>
-			
-			
-
-
-		
-			
-	
 	</table>
 	
-    
-</div>
-</body>
-</html>
+<%@include file="recipeFooter.jsp"%>
